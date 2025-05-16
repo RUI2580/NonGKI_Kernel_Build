@@ -7,6 +7,11 @@ permissions:
 on:
   workflow_dispatch:
     inputs:
+      build_kernel_k40_aosp_a15:
+        description: "Build Kernel RedmiK40?"
+        required: true
+        type: boolean
+        default: true
       build_kernel_op8_oos131_a13:
         description: "Build Kernel OnePlus 8 (OOS13.1)?"
         required: true
@@ -54,6 +59,10 @@ on:
         default: true
 
 jobs:
+  build_kernel_k40_aosp_a15:
+    uses: ./.github/workflows/build_kernel_k40_aosp_a15.yml
+    secrets: inherit
+    if: ${{ inputs.build_kernel_k40_aosp_a15 }}
   build_kernel_op8_oos131_a13:
     uses: ./.github/workflows/build_kernel_op8_oos13.1_a13.yml
     secrets: inherit
@@ -90,6 +99,7 @@ jobs:
   trigger-release:
     runs-on: ubuntu-latest
     needs:
+      - build_kernel_k40_aosp_a15
       - build_kernel_op8_oos131_a13
       - build_kernel_k20p_aosp_a15
       - build_kernel_mix2s_evox_a15
