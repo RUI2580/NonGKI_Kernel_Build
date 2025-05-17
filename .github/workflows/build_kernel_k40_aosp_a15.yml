@@ -514,9 +514,9 @@ jobs:
         if: env.SUSFS_ENABLE == 'true' && env.SUSFS_FIXED == 'true'
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          cp NonGKI_Kernel_Patches/clover_lineage_a15/clover_lineage_a15.patch ./
+          cp NonGKI_Kernel_Patches/alioth_aosp_a15/alioth_aosp_a15.patch ./
 
-          patch -p1 < clover_lineage_a15.patch || true
+          patch -p1 < alioth_aosp_a15.patch || true
 
       - name: Setup ccache
         uses: hendrikmuhs/ccache-action@v1.2
