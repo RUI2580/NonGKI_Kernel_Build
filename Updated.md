@@ -1,7 +1,40 @@
 ## 项目更新日志
+- **Ver.1.4 Fixed 53**
+    - 修改 支持列表 小米Mix2s 系统版本号
+    - 修改 发布列表 小米Mix2s 系统版本号
+
+- **Ver.1.4 Fixed 52**
+    - 修改 支持列表 小米Mix2s Rekernel状态
+    - 修改 发布列表 小米Mix2s Rekernel状态
+
+- **Ver.1.4 Fixed 51**
+    - 增加 说明文件 对于Rekernel的补充说明
+
+- **Ver.1.4 Fixed 50**
+    - 增加 Rekernel 4.9内核 经过binder修补后使用补丁
+    - 修改 小米Mix2s Rekernel 补丁至binder修补版本
+
+- **Ver.1.4 Fixed 49**
+    - 增加 支持列表 小米Mix2s 有关Cgroup相关内容
+    - 增加 发布列表 小米Mix2s 有关Cgroup相关内容
+    - 增加 小米Mix2s Binder_Freezer 补丁
+
+- **Ver.1.4 Fixed 48**
+    - 增加 小米Mix2s Cgroup V2 补丁
+
+- **Ver.1.4 Fixed 47**
+    - 删除 build_checker.sh 脚本
+    - 增加 Rekernel 相关Patch
+    - 增加 示例YAML Rekernel修补步骤
+    - 增加 说明文件 Rekernel相关内容
+    - 增加 支持列表 Rekernel相关内容
+    - 增加 发布列表 Rekernel相关内容
+    - 修改 发布列表 将LXC状态修改为Re:Kernel状态
+    - 移植 小米Mix2s Rekernel修补步骤
+
 - **Ver.1.4 Fixed 46**
     - 增加 支持列表 地区显示
-    - 修改 中兴 AZ201T 设备名称
+    - 修改 中兴 A201ZT 设备名称
 
 - **Ver.1.4 Fixed 45**
     - 修改 支持列表 部分说明内容并将部分机型从Beta转为Stable维护状态

@@ -4,7 +4,7 @@
 | 一加 8  | All | instantnoodle | 4.19/ppajda/XTD | OxygenOS/ColorOS 13.1 | 13 | AnyKernel3 | Magic | ✅ | ❌ | ❌ | ❌ | ❌ | Stable |  
 | 一加 8  | All | instantnoodle | 4.19/Nameless/Nameless | Nameless 15 | 15 | AnyKernel3 | rsuntk | ✅ | ❌ | ❌ | ❌ | ❌ | Stable |  
 | 一加 8  | All | instantnoodle | 4.19/Rohail33/Realking | OxygenOS/ColorOS 13.1 | 13 | AnyKernel3 | SukiSU(U) | ✅ | ❌ | ❌ | ❌ | ✅ | Suspend |  
-| 小米 MIX2S  | All | polaris | 4.9/EvoX/EvoX | Evolution X 10.2.1 | 15 | Boot Image | SukiSU(U) | ✅ | ❌ | ❌ | ✅ | ❌ | Stable |  
+| 小米 MIX2S  | All | polaris | 4.9/EvoX/EvoX | Evolution X 10.6 | 15 | Boot Image | SukiSU(U) | ✅ | ❌ | ❌ | ✅ | ✅ | Stable |  
 | 红米 K20 Pro  | All | raphael | 4.14/SOVIET-ANDROID/SOVIET-STAR-OSS | Based-AOSP | 15 | AnyKernel3 | rsuntk | ✅ | ❌ | ❌ | ❌ | ❌ | Stable |  
 | 红米 Note 4X  | All | mido | 4.9/RaidenShogunSeggs/(Nothing) | Based-AOSP | 13 | AnyKernel3 | Next | ✅ | ❌ | ❌ | ❌ | ❌ | Suspend |  
 | 黑鲨 4 | All | penrose | 4.19/DtHnAme/(Nothing) | MIUI/JoyUI 12 | 11 | AnyKernel3 | rsuntk | ❌ | ❌ | ❌ | ❌ | ❌ | Stable |  
@@ -23,6 +23,7 @@
   - 部分机型由于内核问题将暂停（Suspend）维护，但仍可通过Action的方式Fork后自行编译
   - VFS Hook支持rsuntk、Magic、Next，其他分支可能无法支持，经测试SukiSU无法支持
   - SUSFS v1.5.7 目前可用移植为4.19内核，测试后4.14、4.9内核也可直接使用，理论上≥4.9版本内核都可以直接使用该补丁进行修补，~~其他内核可根据[该commit](https://github.com/rsuntk/android_kernel_asus_sdm660-4.19/compare/c7d82bf8607704c22a8a869c4611c7cf3d22ce31..1ea2cbd7659167e62d2265632710f084c45f3ca1)自行移植~~（该commit可能已无法访问，请参考项目提供的susfs升级补丁自行修补）
+  - [Re:Kernel](https://github.com/Sakion-Team/Re-Kernel) 是一个用于在Binder过程中快速执行临时解冻进程的模块，但其并不一定能在任何设备下奏效
   - 内核通常为全版本可用，除非特殊声明
   - LineageOS 内核 通常需要在repo完整源代码的环境下编译，否则可能会导致无法开机，但若是能够正常编译并开机的我们仍会考虑维护~~，因此我们不会考虑官方维护LineageOS内核~~
   - 一加8 OxygenOS/ColorOS 13.1 经测试8、8t、8Pro、9r都可用，且该内核类原生设备同样可用（但会有某些Bugs）
@@ -35,3 +36,4 @@
   - 谷歌 Pixel 9 Series 指 9代全系列设备，该内核目前尚未经过测试
   - 小米 11 Ultra 没有进行normal patch，仅仅执行backport patch，因此应该可以在KSU管理器中切换kprobe和模拟手动修补，以及SUS SU应该也能正常工作
   - 小米平板 4(Plus) 基于SukiSU Ultra的KPM功能**未经完整测试**（会显示在管理器中，但未刷入内核模块进行测试）
+  - 小米 Mix2s 已移植Cgroup V2，但Cgroup Freezer需要依赖系统额外步骤才能使用且该功能实际执行冻结过程异常，建议使用Cgroup UID
